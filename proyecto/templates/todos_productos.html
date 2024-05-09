@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Extractor de Comentarios</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/todos_productos">Todos los Productos</a></li>
+            <li><a href="/estadisticas">Estadísticas</a></li>
+            <li><a href="/mejores_calificados">Mejores Calificados</a></li>
+            <form action="/buscar" method="GET">
+                <input type="text" name="keyword" placeholder="Buscar producto...">
+                <button type="submit">Buscar</button>
+            </form>
+        </ul>
+    </nav>
+    <h1>Todos los Productos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Comentarios</th>
+                <th>Sentimiento Palabra</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dato in datos %}
+            <tr>
+                <td>{{ dato['Comentarios'] }}</td>
+                <td>{{ dato['Sentimiento_palabra'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

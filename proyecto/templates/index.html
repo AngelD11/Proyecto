@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Extractor de Comentarios</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/todos_productos">Todos los Productos</a></li>
+            <li><a href="/estadisticas">Estadísticas</a></li>
+            <li><a href="/mejores_calificados">Mejores Calificados</a></li>
+            <form action="/buscar" method="GET">
+                <input type="text" name="keyword" placeholder="Buscar producto...">
+                <button type="submit">Buscar</button>
+            </form>
+        </ul>
+    </nav>
+    <h1>Extractor de Comentarios</h1>
+    <form action="/extraer_comentarios" method="post">
+        <label for="url">Ingrese la URL de la página:</label><br>
+        <input type="text" id="url" name="url"><br><br>
+        <input type="submit" value="Extraer Comentarios">
+    </form>
+    <!-- Mostrar mensaje si existe -->
+    {% if mensaje %}
+    <p>{{ mensaje }}</p>
+    {% endif %}
+    
+    <!-- Botón para analizar -->
+    <form action="/analizar_comentarios" method="post">
+        <input type="submit" value="Analizar">
+    </form>
+</body>
+</html>
+
